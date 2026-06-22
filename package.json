@@ -1,0 +1,20 @@
+{
+  "name": "booster-plugin-my-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Your steambooster plugin (rename me).",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "dev": "bun run build.ts --watch",
+    "test": "bun test"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "devDependencies": {
+    "@steambalance/booster-framework": "^0.0.19",
+    "@types/bun": "latest",
+    "typescript": "^5.3.0"
+  }
+}

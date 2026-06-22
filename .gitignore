@@ -1,0 +1,17 @@
+node_modules/
+out/
+dist/
+build/
+*.log
+.booster-dev-config.local.json
+.bun/
+bun.lock
+bun.lockb
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Watch-test trigger file (written by build-watch.test.ts, cleaned up in afterAll but may linger)
+src/__watch_test_trigger__.ts
