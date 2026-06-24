@@ -50,6 +50,16 @@ booster-plugin-template/
 
 ## Conventions (carry-over from the project)
 
+**Commit messages.** Conventional Commits / git-flow style (global rule
+for all 4 repos; canonical in the project's `booster-injector/CLAUDE.md`).
+Use a type prefix (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`,
+`test:`, `build:`, `ci:`, `perf:`, …) with an optional scope, e.g.
+`feat(popup): …`. Subject in lowercase — don't capitalize the first word;
+capitals only where the language demands them (proper nouns, acronyms).
+Keep it laconic and clear, not a wall of text; English only. A body is
+optional and brief — add one only when the *why* isn't obvious from the
+subject.
+
 **Plugin id.** Lower-case latin letters + digits + dashes, from 2 chars,
 no leading digit and no leading/trailing dash (regex
 `^[a-z][a-z0-9]([a-z0-9-]{1,38}[a-z0-9])?$`). **The `booster-` prefix is
