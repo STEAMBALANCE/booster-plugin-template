@@ -23,21 +23,16 @@ API'и обращайтесь в [`booster-framework/docs/`](https://github.com/
 
 Шаблон зависит от `@steambalance/booster-framework` и уже объявляет эту зависимость
 в `package.json`. Отдельно ставить фреймворк не нужно — он подтянется при
-`bun install` (шаг ниже) из реестра пакетов.
+`bun install` (шаг ниже) из публичного GitHub-тега фреймворка.
 
 ## Установка зависимостей
 
-Фреймворк `@steambalance/booster-framework` ставится из GitHub Packages, для
-которого нужен токен с `read:packages`. Задай его перед `bun install`:
+Фреймворк `@steambalance/booster-framework` указан в `package.json` как
+публичная GitHub-зависимость. Токен для GitHub Packages не нужен:
 
 ```pwsh
-$env:NODE_AUTH_TOKEN = "ghp_ТВОЙ_ТОКЕН"   # PAT (classic) с read:packages
 bun install
 ```
-
-`.npmrc` в репозитории уже маршрутизирует scope `@steambalance` на
-`https://npm.pkg.github.com` и читает `NODE_AUTH_TOKEN`. Подробнее —
-README фреймворка, раздел «Установка».
 
 ## Quick start
 
@@ -127,12 +122,13 @@ bun install             # установить зависимости
 bun run build           # build IIFE-бандла (dev → external sourcemap)
 bun --watch run build   # auto-rebuild при изменении src/
 bun test                # bun test (happy-dom)
-SB_PRODUCTION=1 bun run build   # production-вариант (minified, external sourcemap)
+SB_PRODUCTION=1 bun run build   # production-вариант (minified, без sourcemap)
 ```
 
 `build.ts` минимальный: `bun build src/index.ts --format iife
 --target browser`, с `__SB_PLUGIN_VERSION__` и `__SB_PRODUCTION__`
-define'ами. Подходит как стартовая точка; усложните под себя, если
+define'ами. Production-сборка не пишет sourcemap рядом с бандлом.
+Подходит как стартовая точка; усложните под себя, если
 понадобится Svelte / CSS / multi-entry.
 
 ## Troubleshooting
