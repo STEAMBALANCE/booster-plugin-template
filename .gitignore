@@ -3,6 +3,9 @@ out/
 dist/
 build/
 *.log
+.env
+.env.*
+!.env.example
 .booster-dev-config.local.json
 .bun/
 bun.lock

@@ -37,7 +37,7 @@ async function buildOnce(): Promise<void> {
     format: 'iife',
     target: 'browser',
     minify: isProd,
-    sourcemap: isProd ? 'external' : 'inline',
+    sourcemap: isProd ? 'none' : 'external',
     define: {
       __SB_PLUGIN_VERSION__: JSON.stringify(pluginMeta.version),
       __SB_PRODUCTION__: JSON.stringify(isProd),
